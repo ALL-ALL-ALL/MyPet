@@ -6,16 +6,22 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
+
+
+    
     var body: some View {
         VStack {
-            Image("CERF")
+            Image(.C_1)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
             Text("Hello, world!")
         } // fin vstack
-        
-        
-        
+      
+
         
         
     } // fin body
