@@ -28,12 +28,12 @@ class Animal : Identifiable, ObservableObject {
 class AnimalStore: ObservableObject {
     @Published var animal: [Animal] = [
         
-        Animal(name: "CERF", image: "C 1", fav: false, star: "star"),
-        Animal(name: "CHAT", image: "C 2", fav: false, star: "star"),
-        Animal(name: "CHIEN", image: "C 3", fav: false, star: "star"),
+        Animal(name: "CERF", image: "C 3", fav: false, star: "star"),
+        Animal(name: "CHAT", image: "C 1", fav: false, star: "star"),
+        Animal(name: "CHIEN", image: "C 2", fav: false, star: "star"),  
         Animal(name: "GRENOUILLE", image: "G", fav: false, star: "star"),
-        Animal(name: "LAPIN", image: "L 1", fav: false, star: "star"),
-        Animal(name: "LION", image: "L", fav: false, star: "star"),
+        Animal(name: "LAPIN", image: "L", fav: false, star: "star"),
+        Animal(name: "LION", image: "L 1", fav: false, star: "star"),
         Animal(name: "PANDA", image: "P", fav: false, star: "star"),
         Animal(name: "SINGE", image: "S", fav: false, star: "star"),
         Animal(name: "VACHE", image: "V", fav: false, star: "star")
