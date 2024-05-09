@@ -21,12 +21,15 @@ struct DetailsView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 200)
-           
             
+        } // fin zstack
+        
+        
+        HStack{
             Text(animal.name)
-                           .bold()
-                           .foregroundColor(.black)
-                           .padding(.top,300)
+                .bold()
+                .foregroundColor(.black)
+            
             
             
             
@@ -36,19 +39,33 @@ struct DetailsView: View {
                 animal.star = animal.favoris ? "star.fill" : "star"
                 
             } label: {
+               
                 Image(systemName: animal.star)
                     .foregroundColor(.yellow)
-                    .padding(.leading,90)
-                    .padding(.top,297)
 
                 
             } // fin label
-            
-            
-            
-            
-            
-        } // fin zstack
+      
+        } // fin hsatck
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         

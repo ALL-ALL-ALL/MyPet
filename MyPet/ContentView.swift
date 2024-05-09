@@ -23,9 +23,17 @@ struct ContentView: View {
         
         NavigationStack{
             ScrollView {
+                
                 LazyVGrid(columns:columns) {
                     ForEach(animalStore.animal) { animal in
-                        DetailsView(animal: animal)
+                        NavigationLink(destination: DetailsView(animal: animal)) {
+                            
+                            
+                            
+                            
+                            
+                            DetailsView(animal: animal)
+                        }
                         
                     } // fin For Each
                 } // fin Lazygrid
