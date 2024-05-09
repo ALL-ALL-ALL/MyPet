@@ -9,18 +9,54 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
+    
+    @ObservedObject var animalStore = AnimalStore()
+
+    let columns: [GridItem] = [
+        GridItem(.flexible(minimum: 150, maximum: .infinity)),
+        GridItem(.flexible(minimum: 150, maximum: .infinity))
 
 
-    
-    
+
+
+
+
+    ]
+
     var body: some View {
-        VStack {
-            Image(.C_1)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 200, height: 200)
-            Text("Hello, world!")
-        } // fin vstack
+            
+       
+                       
+               
+        ScrollView {
+            LazyVGrid(columns:columns) {
+                       ForEach(animalStore.animal) { animal in
+                           DetailsView(animal: animal)
+
+                           
+                           
+                           
+                           
+                       }
+                   }
+                   .padding()
+            
+               } // fin scrollview
+           
+    
+        
+
+
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
       
 
         

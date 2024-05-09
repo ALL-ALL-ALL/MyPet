@@ -13,48 +13,57 @@ struct DetailsView: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 30)
-                .frame(width: 250, height: 250)
+                .frame(width: 170, height: 170)
                 .foregroundColor(.yellow)
-                .padding(.top,130)
+                .padding(.top,80)
             
-            Image(.C_3)
+            Image(animal.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 280, height: 330)
+                .frame(width: 200, height: 200)
+           
             
-        } // fin zstack
-        HStack{
             Text(animal.name)
-                .bold()
-                .foregroundColor(.black)
+                           .bold()
+                           .foregroundColor(.black)
+                           .padding(.top,300)
+            
+            
+            
             
             Button {
                 animal.favoris.toggle()
                 animal.star = animal.favoris ? "star.fill" : "star"
-
+                
             } label: {
                 Image(systemName: animal.star)
                     .foregroundColor(.yellow)
+                    .padding(.leading,90)
+                    .padding(.top,297)
 
+                
             } // fin label
+            
+            
+            
+            
+            
+        } // fin zstack
+        
+        
+        
+      
 
-            
-            
-            
-            
-            
-            
-        } // fin hstack
-        
-        
-    
-        
-        
-        
-        
     } // fin body
 } // fin struct
 
 #Preview {
-    DetailsView(animal: Animal(name: "CERF", image: "C 1", fav: false, star: "star"))
+    DetailsView(animal: Animal(name: "CERF", image: "cerf", fav: false, star: "star"))
+    
+    
+    
+    
+    
+    
+    
 }
