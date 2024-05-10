@@ -18,23 +18,37 @@ struct ContentView: View {
     let columns: [GridItem] = [
         GridItem(.flexible(minimum: 150, maximum: .infinity)),
         GridItem(.flexible(minimum: 150, maximum: .infinity))
-        
     ]
+    
+    var filteredAnimals: [Animal] {
+            if search.isEmpty {
+                return animalStore.animal
+            } else {
+                return animalStore.animal.filter { animal in
+                    animal.name.lowercased().contains(search.lowercased())
+                }
+            }
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     var body: some View {
         
         NavigationStack{
             ScrollView {
                 LazyVGrid(columns:columns) {
-                    ForEach(animalStore.animal) { animal in
+                    ForEach(filteredAnimals) { animal in
                         NavigationLink(destination: DetailsView(animal: animal)) {
                             
-                            
-                            
                             DetailsView(animal: animal)
-
-                            
-                            
        
                          } // fin label avec le code a linterieur de ce que lon voit
                         
