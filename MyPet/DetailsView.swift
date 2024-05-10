@@ -11,18 +11,20 @@ struct DetailsView: View {
     @ObservedObject var animal : Animal
 
     var body: some View {
+       
         ZStack{
             RoundedRectangle(cornerRadius: 30)
-                .frame(width: 170, height: 170)
+                .frame(width: 150, height: 150)
                 .foregroundColor(.yellow)
                 .padding(.top,80)
             
             Image(animal.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 200)
-            
+                .frame(width: 150, height: 150)
+
         } // fin zstack
+        
         
         
         HStack{
