@@ -11,68 +11,37 @@ struct DetailsView: View {
     @ObservedObject var animal : Animal
 
     var body: some View {
-       
-        ZStack{
-            RoundedRectangle(cornerRadius: 30)
-                .frame(width: 150, height: 150)
-                .foregroundColor(.yellow)
-                .padding(.top,80)
+        VStack {
+                   ZStack {
+                       RoundedRectangle(cornerRadius: 30)
+                           .frame(width: 150, height: 150)
+                           .foregroundColor(.yellow)
+                           .padding(.top, 80)
+                       
+                       Image(animal.image)
+                           .resizable()
+                           .aspectRatio(contentMode: .fit)
+                           .frame(width: 150, height: 150)
+                       
+                   } // fin zstack
             
-            Image(animal.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 150)
-
-        } // fin zstack
-        
-        
-        
-        HStack{
-            Text(animal.name)
-                .bold()
-                .foregroundColor(.black)
+                   .padding()
+                   
             
-            
-            
-            
-            
-            Button {
-                animal.favoris.toggle()
-                animal.star = animal.favoris ? "star.fill" : "star"
-                
-            } label: {
-               
-                Image(systemName: animal.star)
-                    .foregroundColor(.yellow)
-
-                
+            HStack {
+                Text(animal.name)
+                           .bold()
+                       .foregroundColor(.black)
+                Button {
+                    animal.favoris.toggle()
+                    animal.star = animal.favoris ? "star.fill" : "star"
+                    
+                } label: {
+                    Image(systemName: animal.star)
+                        .foregroundColor(.yellow)
             } // fin label
-      
-        } // fin hsatck
-        
-        
-        
-        
-
-        
-        
-        
-        
-        
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-      
-
+        } // fin Hstack
+      } // fin vstack
     } // fin body
 } // fin struct
 
