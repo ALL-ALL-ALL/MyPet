@@ -8,10 +8,73 @@
 import SwiftUI
 
 struct noanimalView: View {
+    @State private var AddingAnimal = false
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        VStack{
+               
+                
+                Image(.sorry)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200, height: 200)
+                
+            
+            
+            Text("Pas d'animaux")
+                .bold()
+                .font(.title2)
+            
+            Text("Ajoutez des animaux à votre collection")
+                .italic()
+                .foregroundColor(.gray)
+            
+                .padding()
+            
+            
+            
+            
+            
+            
+            ZStack{
+                Circle()
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(.yellow)
+                
+                
+                
+                Button(action: {
+                    AddingAnimal = true
+                }, label: {
+                    Image(systemName: "plus")
+                        .sheet(isPresented: $AddingAnimal) {
+                                            addanimalView()
+                            
+                                        } // fin de .sheet
+                    
+                }) // fin de label
+                
+                
+            } // fin Zstack
+            
+            
+            
+            
+            
+            
+            
+            
+        } // fin vstack
+
+        
+        
+        
+        
+        
+        
+        
+    } // fin body
+} // fin struct
 
 #Preview {
     noanimalView()

@@ -8,10 +8,51 @@
 import SwiftUI
 
 struct addanimalView: View {
+    @State private var name = ""
+    @State private var image = ""
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        VStack{
+            Form{
+                Section {
+                    TextField("Nom de l'animal", text: $name)
+                    TextField("Url de l'image", text: $image)
+                } header: {
+                    Text("ANIMAL IDENTITY")
+                    
+                } // fin du header
+                
+                
+                
+            } // fin form
+                
+            
+        
+
+            
+            
+            
+            
+            
+        } // fin vstack
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    } // fin body
+} // fin struct
 
 #Preview {
     addanimalView()

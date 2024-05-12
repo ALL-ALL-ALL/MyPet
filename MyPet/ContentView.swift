@@ -29,16 +29,6 @@ struct ContentView: View {
                 }
             }
         }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     var body: some View {
         
@@ -51,9 +41,6 @@ struct ContentView: View {
                             DetailsView(animal: animal)
        
                          } // fin label avec le code a linterieur de ce que lon voit
-                        
-                        
-                        
                     } // fin For Each
                 } // fin Lazygrid
                 .padding()
