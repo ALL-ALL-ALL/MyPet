@@ -20,7 +20,6 @@ struct AddAnimalView: View {
     
     
     
-    
     var body: some View {
         VStack{
             

@@ -38,6 +38,7 @@ class AnimalStore: ObservableObject {
         Animal(name: "SINGE", image: "singe", fav: false, star: "star"),
         Animal(name: "VACHE", image: "vache", fav: false, star: "star"),
 
+
    
     ] // fin @Published
     

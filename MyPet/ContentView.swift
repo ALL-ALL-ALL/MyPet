@@ -9,6 +9,7 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
+
     
     @ObservedObject var animalStore = AnimalStore()  // Tableau 
     
@@ -28,6 +29,8 @@ struct ContentView: View {
                     animal.name.lowercased().contains(search.lowercased())
                 }
             }
+        
+        
         }
 
     var body: some View {
@@ -37,19 +40,32 @@ struct ContentView: View {
                 LazyVGrid(columns:columns) {
                     ForEach(filteredAnimals) { animal in
                         NavigationLink(destination: DetailsView(animal: animal)) {
-                            
                             DetailsView(animal: animal)
        
                          } // fin label avec le code a linterieur de ce que lon voit
                     } // fin For Each
-                } // fin Lazygrid
+                    
+                    if filteredAnimals.isEmpty {
+                                            NavigationLink(destination: NoAnimalView()) {
+                                                Text("ici pour ajouter un nouvel animal.")
+                                            }
+                        
+                        
+                        
+                                        } // fin if
+                    
+                    
+                    
+                    
+                    
+                    
+                                    } // fin lazygrid
+                } // fin scrollview
                 .padding()
+                .navigationTitle("Animals")
                 
-            } // fin scrollview
-            .navigationTitle("Animals")
-            
-        } // fin navigationStack
-        .searchable(text: $search)
+            } // fin navigation stack
+            .searchable(text: $search)
 
             
            
