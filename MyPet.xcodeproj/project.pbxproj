@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B05663E2BF2C88E001D3B71 /* AddAnimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05663D2BF2C88E001D3B71 /* AddAnimalView.swift */; };
+		3B0566402BF2C942001D3B71 /* NoAnimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05663F2BF2C942001D3B71 /* NoAnimalView.swift */; };
 		3B35EC8A2BD1D9D200902116 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B35EC892BD1D9D200902116 /* DetailsView.swift */; };
 		3B52C4502BCF329B0004B673 /* tableau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B52C44F2BCF329B0004B673 /* tableau.swift */; };
 		3B59EAC82BC6F3C0001DD89C /* MyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EAC72BC6F3C0001DD89C /* MyPetApp.swift */; };
 		3B59EACA2BC6F3C0001DD89C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B59EAC92BC6F3C0001DD89C /* ContentView.swift */; };
 		3B59EACC2BC6F3C3001DD89C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B59EACB2BC6F3C3001DD89C /* Assets.xcassets */; };
 		3B59EACF2BC6F3C3001DD89C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B59EACE2BC6F3C3001DD89C /* Preview Assets.xcassets */; };
-		3B8946142BF17B6E00EBC7EF /* addanimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8946132BF17B6E00EBC7EF /* addanimalView.swift */; };
-		3BFE7F992BEEDBFA00376741 /* noanimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE7F982BEEDBFA00376741 /* noanimalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B05663D2BF2C88E001D3B71 /* AddAnimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimalView.swift; sourceTree = "<group>"; };
+		3B05663F2BF2C942001D3B71 /* NoAnimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAnimalView.swift; sourceTree = "<group>"; };
 		3B35EC892BD1D9D200902116 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		3B52C44F2BCF329B0004B673 /* tableau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableau.swift; sourceTree = "<group>"; };
 		3B59EAC42BC6F3C0001DD89C /* MyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,8 +27,6 @@
 		3B59EAC92BC6F3C0001DD89C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B59EACB2BC6F3C3001DD89C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B59EACE2BC6F3C3001DD89C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3B8946132BF17B6E00EBC7EF /* addanimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addanimalView.swift; sourceTree = "<group>"; };
-		3BFE7F982BEEDBFA00376741 /* noanimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noanimalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,8 @@
 				3B59EAC72BC6F3C0001DD89C /* MyPetApp.swift */,
 				3B59EAC92BC6F3C0001DD89C /* ContentView.swift */,
 				3B35EC892BD1D9D200902116 /* DetailsView.swift */,
-				3BFE7F982BEEDBFA00376741 /* noanimalView.swift */,
-				3B8946132BF17B6E00EBC7EF /* addanimalView.swift */,
+				3B05663F2BF2C942001D3B71 /* NoAnimalView.swift */,
+				3B05663D2BF2C88E001D3B71 /* AddAnimalView.swift */,
 				3B52C44F2BCF329B0004B673 /* tableau.swift */,
 				3B59EACB2BC6F3C3001DD89C /* Assets.xcassets */,
 				3B59EACD2BC6F3C3001DD89C /* Preview Content */,
@@ -151,9 +151,9 @@
 			files = (
 				3B59EACA2BC6F3C0001DD89C /* ContentView.swift in Sources */,
 				3B35EC8A2BD1D9D200902116 /* DetailsView.swift in Sources */,
-				3BFE7F992BEEDBFA00376741 /* noanimalView.swift in Sources */,
 				3B59EAC82BC6F3C0001DD89C /* MyPetApp.swift in Sources */,
-				3B8946142BF17B6E00EBC7EF /* addanimalView.swift in Sources */,
+				3B0566402BF2C942001D3B71 /* NoAnimalView.swift in Sources */,
+				3B05663E2BF2C88E001D3B71 /* AddAnimalView.swift in Sources */,
 				3B52C4502BCF329B0004B673 /* tableau.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
