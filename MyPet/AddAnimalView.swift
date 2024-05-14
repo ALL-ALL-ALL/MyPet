@@ -10,6 +10,8 @@ import SwiftUI
 struct AddAnimalView: View {
     @State private var name = ""
     @State private var image = ""
+    
+    
     @ObservedObject var animalStore: AnimalStore
 
     
@@ -26,7 +28,7 @@ struct AddAnimalView: View {
             Form{
                 Section {
                     TextField("Nom de l'animal", text: $name)
-                    TextField("Url de l'image", text: $image)
+//                  TextField("Url de l'image", text: $image)
                 } header: {
                     Text("ANIMAL IDENTITY")
                     
@@ -34,6 +36,7 @@ struct AddAnimalView: View {
                 
                 Section {
                     Button("AJOUTEZ"){
+                        
                         addAnimal()
                         
                     }

@@ -10,8 +10,9 @@ import UIKit
 
 struct ContentView: View {
 
+
+    @ObservedObject var animalStore = AnimalStore()  // Tableau
     
-    @ObservedObject var animalStore = AnimalStore()  // Tableau 
     
     @State private var search = "" // barre de recheche
 
@@ -93,6 +94,12 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+
+
+
+
+
 
 
 
