@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct NoAnimalView: View {
-    @StateObject var animalStore = AnimalStore()
+    @ObservedObject var animalStore: AnimalStore
+
 
     
     @State private var AddingAnimal = false
@@ -83,7 +84,7 @@ struct NoAnimalView: View {
 
 
 #Preview {
-    NoAnimalView()
+    NoAnimalView(animalStore: AnimalStore())
 }
 
 

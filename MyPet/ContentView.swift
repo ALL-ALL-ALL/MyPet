@@ -11,8 +11,8 @@ import UIKit
 struct ContentView: View {
 
 
-    @ObservedObject var animalStore = AnimalStore()  // Tableau
-    
+    @ObservedObject var animalStore: AnimalStore
+
     
     @State private var search = "" // barre de recheche
 
@@ -28,11 +28,9 @@ struct ContentView: View {
             } else {
                 return animalStore.animal.filter { animal in
                     animal.name.lowercased().contains(search.lowercased())
-                }
-            }
-        
-        
-        }
+                } // fin filtre recherche dans animal
+            } // fin de sinon
+        } // fin filtreanimal
 
     var body: some View {
         
@@ -47,29 +45,36 @@ struct ContentView: View {
                     } // fin For Each
                     
                     if filteredAnimals.isEmpty {
-                                            NavigationLink(destination: NoAnimalView()) {
-                                                Text("ici pour ajouter un nouvel animal.")
+                        NavigationLink(destination: AddAnimalView(animalStore: animalStore)) {
+                            Button {
+
+
+                            } label: {
+                                NoAnimalView(animalStore: animalStore)
+                                    .padding(.trailing,-100)
+                            }
+
+ 
+                          
+                            
+                                
+                            
+                            
+                            
+                            
                                             }
                         
-                        
-                        
                                         } // fin if
-                    
-                    
                                     } // fin lazygrid
                 } // fin scrollview
                 .padding()
                 .navigationTitle("Animals")
-                
             } // fin navigation stack
             .searchable(text: $search)
-
-
     } // fin body
 } // fin struct
-
 #Preview {
-    ContentView()
+    ContentView(animalStore: AnimalStore())
 }
 
 

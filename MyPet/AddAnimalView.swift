@@ -28,7 +28,7 @@ struct AddAnimalView: View {
             Form{
                 Section {
                     TextField("Nom de l'animal", text: $name)
-//                  TextField("Url de l'image", text: $image)
+                    TextField("Url de l'image", text: $image)
                 } header: {
                     Text("ANIMAL IDENTITY")
                     
