@@ -56,10 +56,6 @@ struct ContentView: View {
                                         } // fin if
                     
                     
-                    
-                    
-                    
-                    
                                     } // fin lazygrid
                 } // fin scrollview
                 .padding()
@@ -68,32 +64,27 @@ struct ContentView: View {
             } // fin navigation stack
             .searchable(text: $search)
 
-            
-           
-    
-        
 
-
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-      
-
-        
-        
     } // fin body
 } // fin struct
 
 #Preview {
     ContentView()
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
