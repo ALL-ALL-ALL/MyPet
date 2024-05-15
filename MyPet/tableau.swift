@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 
+
 class Animal : Identifiable, ObservableObject {
     @Published var id = UUID()
     @Published var name : String

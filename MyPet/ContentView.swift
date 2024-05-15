@@ -46,23 +46,16 @@ struct ContentView: View {
                     
                     if filteredAnimals.isEmpty {
                         NavigationLink(destination: AddAnimalView(animalStore: animalStore)) {
+                            
                             Button {
 
 
                             } label: {
                                 NoAnimalView(animalStore: animalStore)
                                     .padding(.trailing,-100)
-                            }
+                            } // fin label
 
- 
-                          
-                            
-                                
-                            
-                            
-                            
-                            
-                                            }
+                                            } // fin navigationlink
                         
                                         } // fin if
                                     } // fin lazygrid
@@ -73,6 +66,7 @@ struct ContentView: View {
             .searchable(text: $search)
     } // fin body
 } // fin struct
+
 #Preview {
     ContentView(animalStore: AnimalStore())
 }
