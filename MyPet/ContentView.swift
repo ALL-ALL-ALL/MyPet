@@ -8,9 +8,10 @@
 import SwiftUI
 import UIKit
 
-struct ContentView: View { 
 
+struct ContentView: View {
 
+ 
     @ObservedObject var animalStore: AnimalStore
 
     
