@@ -8,23 +8,30 @@
 import SwiftUI
 import PhotosUI
 
-
+@available(iOS 16.0, *)
 struct AddAnimalView: View {
     @State private var name = ""
-    @State private var image = ""
-    
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
+    @Environment(\.dismiss) private var dismiss
+
     
+    @ObservedObject var animalStore: AnimalStore
+    
+
+
     
     func addAnimal() {
             guard let imageData = selectedImageData,
                   let uiImage = UIImage(data: imageData),
-                  let imageBase64 = uiImage.jpegData(compressionQuality: 1.0)?.base64EncodedString() else {
+                  let imageBase64 = uiImage.jpegData(compressionQuality:1.0)?.base64EncodedString() else {
                 return
-            }
+            } // fin else
             let newAnimal = Animal(name: name, image:imageBase64, fav: false, star: "star")
             animalStore.animal.append(newAnimal)
+            dismiss() // Fermer la vue après l'ajout de l'animal
+
+
         }
     
     // rajouter
@@ -32,7 +39,6 @@ struct AddAnimalView: View {
     
     
     
-    @ObservedObject var animalStore: AnimalStore
 
     
     
@@ -48,26 +54,26 @@ struct AddAnimalView: View {
                         .keyboardType(.alphabet)
                     
                     if let selectedImageData,
-                                          let uiImage = UIImage(data: selectedImageData) {
-                                           Image(uiImage: uiImage)
-                                               .resizable()
-                                               .scaledToFit()
-                                               .frame(width: 150, height: 150)
-                                       }
+                          let uiImage = UIImage(data: selectedImageData) {
+                           Image(uiImage: uiImage)
+                               .resizable()
+                               .scaledToFit()
+                               .frame(width: 150, height: 150)
+                       }
 
-                                       PhotosPicker(
-                                           selection: $selectedItem,
-                                           matching: .images,
-                                           photoLibrary: .shared()) {
-                                               Text("Choisir une image")
-                                           }
-                                           .onChange(of: selectedItem) { newItem in
-                                               Task {
-                                                   if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                                       selectedImageData = data
-                                                   }
-                                               }
-                                           }
+                       PhotosPicker(
+                           selection: $selectedItem,
+                           matching: .images,
+                           photoLibrary: .shared()) {
+                               Text("Choisir une image")
+                           }
+                           .onChange(of: selectedItem) { newItem in
+                               Task {
+                                   if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                       selectedImageData = data
+                                   }
+                               }
+                           }
                     
                     
                     

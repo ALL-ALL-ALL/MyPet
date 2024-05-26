@@ -31,7 +31,7 @@ struct DetailsView: View {
             HStack {
                 Text(animal.name)
                            .bold()
-                       .foregroundColor(.black)
+                           .foregroundColor(.black)
                 Button {
                     animal.favoris.toggle()
                     animal.star = animal.favoris ? "star.fill" : "star"
