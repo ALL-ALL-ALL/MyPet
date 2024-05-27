@@ -18,6 +18,17 @@ struct DetailsView: View {
                            .foregroundColor(.yellow)
                            .padding(.top, 80)
                        
+                       if let uiImage = animal.image.toUIImage() {
+                                          Image(uiImage: uiImage)
+                                              .resizable()
+                                              .aspectRatio(contentMode: .fit)
+                                              .frame(width: 150, height: 150)
+                                      } else {
+                                         
+                                      }
+                       
+                       
+                       
                        Image(animal.image)
                            .resizable()
                            .aspectRatio(contentMode: .fit)

@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var search = "" // barre de recheche
 
 
+
     let columns: [GridItem] = [
         GridItem(.flexible(minimum: 150, maximum: .infinity)),
         GridItem(.flexible(minimum: 150, maximum: .infinity))
@@ -42,28 +43,16 @@ struct ContentView: View {
                         NavigationLink(destination: DetailsView(animal: animal)) {
                             VStack{
                                 DetailsView(animal: animal)
-                                if let uiImage = animal.image.toUIImage() {
-                                    Image(uiImage: uiImage)
-                                           .resizable()
-                                           .aspectRatio(contentMode: .fit)
-                                           .frame(width: 120, height: 120)
-                                           .cornerRadius(30)
-                                           .padding(.top, -190)
-                                       } else {
-                                                                                       
-                                          
-                                       }
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
+//                                if let uiImage = animal.image.toUIImage() {
+//                                    Image(uiImage: uiImage)
+//                                           .resizable()
+//                                           .aspectRatio(contentMode: .fit)
+//                                           .frame(width: 120, height: 120)
+//                                           .cornerRadius(30)
+//                                           .padding(.top, -190)
+//                                       } else {
+//                                          
+//                                       }
                                 } // fin Vstack
                             } // fin navigationLink
                          } // fin For Each
@@ -78,6 +67,7 @@ struct ContentView: View {
                         NavigationLink(destination: AddAnimalView(animalStore: animalStore)) {
                             Button {
                                 // Action à mettre si jamais
+
                             } label: {
                                 NoAnimalView(animalStore: animalStore)
                                     .padding()
@@ -87,6 +77,10 @@ struct ContentView: View {
                         
                                         } // fin if
                                     } // fin SCrollView
+            
+            
+            
+            
                 } // fin NAvigationStack
                 .padding()
             } // fin body
