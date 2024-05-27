@@ -7,3 +7,8 @@
 
 
 <img width="1440" alt="SCR-20240528-cfaq" src="https://github.com/ALL-ALL-ALL/MyPet/assets/157831738/9e2613e6-4ab5-4847-a81c-152c34c54e92">
+
+
+
+<img width="1440" alt="SCR-20240528-cgxx" src="https://github.com/ALL-ALL-ALL/MyPet/assets/157831738/74f3ebe9-6261-4cb4-8b09-7b577bb6c082">
+
