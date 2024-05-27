@@ -42,6 +42,28 @@ struct ContentView: View {
                         NavigationLink(destination: DetailsView(animal: animal)) {
                             VStack{
                                 DetailsView(animal: animal)
+                                if let uiImage = animal.image.toUIImage() {
+                                    Image(uiImage: uiImage)
+                                           .resizable()
+                                           .aspectRatio(contentMode: .fit)
+                                           .frame(width: 120, height: 120)
+                                           .cornerRadius(30)
+                                           .padding(.top, -190)
+                                       } else {
+                                                                                       
+                                          
+                                       }
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                                 } // fin Vstack
                             } // fin navigationLink
                          } // fin For Each

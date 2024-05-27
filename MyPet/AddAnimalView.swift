@@ -16,6 +16,7 @@ struct AddAnimalView: View {
     @State private var selectedImageData: Data? = nil
     @Environment(\.dismiss) private var dismiss
 
+
     
     @ObservedObject var animalStore: AnimalStore
     
