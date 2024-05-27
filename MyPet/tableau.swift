@@ -11,17 +11,20 @@ import Combine
 
 
 class Animal : Identifiable, ObservableObject {
-    @Published var id = UUID()
+               var id = UUID()
     @Published var name : String
     @Published var image : String
-    @Published var favoris : Bool
+    @Published var fav : Bool
     @Published var star : String
     
     init(name: String, image: String, fav : Bool, star : String) {
         self.name = name
         self.image = image
-        self.favoris = fav
+        self.fav = fav
         self.star = star
+       
+        
+        
         
     } // fin INIT
 } // fin class Animal

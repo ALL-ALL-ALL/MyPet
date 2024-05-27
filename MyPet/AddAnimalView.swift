@@ -10,6 +10,7 @@ import PhotosUI
 
 @available(iOS 16.0, *)
 struct AddAnimalView: View {
+    
     @State private var name = ""
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil

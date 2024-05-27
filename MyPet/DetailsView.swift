@@ -33,25 +33,21 @@ struct DetailsView: View {
                            .bold()
                            .foregroundColor(.black)
                 Button {
-                    animal.favoris.toggle()
-                    animal.star = animal.favoris ? "star.fill" : "star"
+                    
+                    animal.fav.toggle()
+                    animal.star = animal.fav ? "star.fill" : "star"
                     
                 } label: {
                     Image(systemName: animal.star)
                         .foregroundColor(.yellow)
+                    
             } // fin label
         } // fin Hstack
+            
       } // fin vstack
+        
     } // fin body
 } // fin struct
-
 #Preview {
     DetailsView(animal: Animal(name: "CERF", image: "cerf", fav: false, star: "star"))
-    
-    
-    
-    
-    
-    
-    
 }

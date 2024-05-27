@@ -10,8 +10,9 @@ import UIKit
 
 
 struct ContentView: View {
+    
 
- 
+
     @ObservedObject var animalStore: AnimalStore
     @State private var search = "" // barre de recheche
 
@@ -34,92 +35,41 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack{
+            
             ScrollView {
                 LazyVGrid(columns:columns) {
                     ForEach(filteredAnimals) { animal in
                         NavigationLink(destination: DetailsView(animal: animal)) {
                             VStack{
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 30)
-                                        .frame(width: 150, height: 150)
-                                        .foregroundColor(.yellow)
-                                        .padding(.top, 80)
-                                    
-                                    
-                                    if let uiImage = animal.image.toUIImage() {
-                                        Image(uiImage: uiImage)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 120, height: 120)
-                                            .cornerRadius(30)
-                                            .padding(.top,40)
-                                    } else {
-                                        Image(animal.image)
-                                           .resizable()
-                                           .aspectRatio(contentMode: .fit)
-                                           .frame(width: 150, height: 150)
-                                        
-                                    } // fin else
-                                } // fin zstack
-                                
-                                HStack{
-                                    Text(animal.name)
-                                               .bold()
-                                               .foregroundColor(.black)
-                                    
-                                    Button {
-                                        animal.favoris.toggle()
-                                        animal.star = animal.favoris ? "star.fill" : "star"
-                                        
-                                    } label: {
-                                        Image(systemName: animal.star)
-                                            .foregroundColor(.yellow)
+                                DetailsView(animal: animal)
+                                } // fin Vstack
+                            } // fin navigationLink
+                         } // fin For Each
+                    } // fin lazyGrid
+                .navigationTitle("Animals")
+                .searchable(text: $search)
 
-                                } // fin label
-                                    
-
-                                    
-                                    
-                                    
-                                    
-                                } // fin hstack
-                                
-                                
-                                
-                            } // fin vstack
-                            
-                            
-                            
-                            
-                            
-                            
-       
-                         } // fin label avec le code a linterieur de ce que lon voit
-                    } // fin For Each
-                    
+                
+                
+                
                     if filteredAnimals.isEmpty {
                         NavigationLink(destination: AddAnimalView(animalStore: animalStore)) {
-                            
                             Button {
-
-
+                                // Action à mettre si jamais
                             } label: {
                                 NoAnimalView(animalStore: animalStore)
-                                    .padding(.trailing,-100)
+                                    .padding()
                             } // fin label
 
                                             } // fin navigationlink
                         
                                         } // fin if
-                                    } // fin lazygrid
-                } // fin scrollview
+                                    } // fin SCrollView
+                } // fin NAvigationStack
                 .padding()
-                .navigationTitle("Animals")
-            } // fin navigation stack
-            .searchable(text: $search)
-    } // fin body
+            } // fin body
+    } // fin struct
 
-} // fin struct
 @available(iOS 16.0, *)
 
 #Preview {
